@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Register from "./pages/Register";
+import Logining from "./pages/Logining";
+import Home from "./pages/Home";
+
+import { checkToken } from "./api/auth";
+import { useState } from "react";
+import { useEffect } from "react";
+import UserContext from "./context/UserContext";
+import NavBar from "./components/NavBar";
 
 function App() {
+  const [user, setUser] = useState(false);
+  useEffect(() => {
+    setUser(checkToken());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={{ user, setUser }}>
+      <div>
+        {user && <NavBar />}
+        <Routes>
+          <Route path="/" Component={Home} />
+          <Route path="/register" Component={Register} />
+          <Route path="/login" Component={Logining} />
+        </Routes>
+      </div>
+    </UserContext.Provider>
   );
 }
 
