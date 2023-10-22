@@ -7,7 +7,7 @@ import UserContext from "../context/UserContext";
 
 const Register = () => {
   const [userInfo, setUserInfo] = useState({});
-  // const { user, setUser } = UseContext(UserContext);
+  const { user, setUser } = UseContext(UserContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -23,30 +23,34 @@ const Register = () => {
     console.log("hello");
   };
 
-  const { mutate, isloading, error } = useMutation({
+  const { mutate, isloading } = useMutation({
     mutationkey: ["register"],
     mutationFn: () => register(userInfo),
-    // onSuccess: () => {
-    //   navigate("/");
-    //   setUser(true);
-    // },
+    onSuccess: () => {
+      setUser(true);
+      navigate("/");
+    },
   });
+
+  //   if (user) {
+  //   navigate("/");
+  // }
 
   return (
     <div className=" h-screen w-screen flex justify-center items-center bg-blue-400 ">
-      <div className="flex flex-col gap-3 bg-red-500">
-        <h1> Register</h1>
+      <div className=" gap-3 bg-red-500 w-[50%] h-[50%] flex flex-col justify-center items-center">
+        <h1 className="text-[35px]"> Register</h1>
         <input
           name="username"
           onChange={handleChange}
           placeholder="username"
-          className="p-1 "
+          className="w-[80%] h-[50px] rounded-lg px-5 border-[2px] border-black py-1"
         />
         <input
           name="password"
           onChange={handleChange}
           placeholder="password"
-          className="p-1"
+          className="w-[80%] h-[50px] rounded-lg px-5 border-[2px] border-black py-1"
           type="password"
         />
         <input
@@ -54,6 +58,7 @@ const Register = () => {
           onChange={handleChange}
           placeholder="image"
           type="file"
+          className="w-[80%] h-[50px] rounded-lg px-5 border-[2px] border-black py-1"
         />
         {/* {isloading ? (
           <button

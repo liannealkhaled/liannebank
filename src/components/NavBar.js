@@ -104,3 +104,32 @@
 // };
 
 // export default NavBar;
+
+import React, { useContext } from "react";
+import UserContext from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
+
+const NavBar = () => {
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  return (
+    <div className="flex justify-around items-center h-[70px] bg-amber-300">
+      <div className="h-[50px] w-[50px] rounded-full bg-white"> </div>
+      <div> username: </div>
+      <div> balance: </div>
+      <div
+        onClick={() => {
+          localStorage.removeItem("token");
+          setUser(false);
+          navigate("/login");
+        }}
+        className=" hover:bg-slate-600 px-5 rounded-md cursor-pointer"
+      >
+        logout{" "}
+      </div>
+    </div>
+  );
+};
+
+export default NavBar;

@@ -19,31 +19,36 @@ const Logining = () => {
     mutationKey: ["login"],
     mutationFn: () => login(userInfo),
     onSuccess: () => {
+      setUser(true);
       navigate("/");
-      setUser(false);
     },
   });
+
+  // if (user) {
+  //   navigate("/");
+  // }
+
   return (
     <div className=" h-screen w-screen flex justify-center items-center bg-blue-400 ">
-      <div className="flex flex-col gap-3 bg-red-500">
-        <h1> Login</h1>
+      <div className=" gap-3 bg-red-500 w-[50%] h-[50%] flex flex-col justify-center items-center">
+        <h1 className="text-[35px]"> Login</h1>
         <input
           name="username"
           onChange={handleChange}
           placeholder="username"
-          className="p-1 "
+          className="w-[80%] h-[50px] rounded-lg px-5 border-[2px] border-black py-1"
         />
 
         <input
           name="password"
           onChange={handleChange}
           placeholder="password"
-          className="p-1"
+          className="w-[80%] h-[50px] rounded-lg px-5 border-[2px] border-black py-1"
           type="password"
         />
         <button
           onClick={() => mutate()}
-          className="border-[2px] border-white hover:bg-slate-500"
+          className="border-[2px] h-1 w-5 border-white hover:bg-slate-500"
         >
           Login
         </button>

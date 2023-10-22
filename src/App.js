@@ -9,7 +9,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import UserContext from "./context/UserContext";
 import NavBar from "./components/NavBar";
-import Transactions from "./pages/Transactions";
 
 function App() {
   const [user, setUser] = useState(false);
@@ -21,11 +20,13 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <div>
         {user && <NavBar />}
+
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/register" Component={Register} />
           <Route path="/login" Component={Logining} />
-          <Route path="/transactions" Component={Transactions} />
+          {/* <Route path="/transactions" Component={Transactions} /> */}
+          {/* user ? <route home/> : <route not found/>  */}
         </Routes>
       </div>
     </UserContext.Provider>
