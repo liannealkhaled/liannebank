@@ -138,7 +138,7 @@ const NavBar = () => {
           </div>
           <div className="font-mono font-semibold">
             {" "}
-            Balance: {data?.balance}
+            Balance: {data?.balance} kd
           </div>
           <div
             onClick={() => {
@@ -146,7 +146,7 @@ const NavBar = () => {
               setUser(false);
               navigate("/");
             }}
-            className=" hover:bg-slate-600 px-5 rounded-md cursor-pointer font-mono font-semibold "
+            className=" hover:bg-slate-400 px-5 rounded-md cursor-pointer font-mono font-semibold "
           >
             Logout{" "}
           </div>{" "}

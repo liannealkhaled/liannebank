@@ -38,7 +38,7 @@ const Register = () => {
 
   return (
     <div className=" h-screen w-screen flex justify-center items-center">
-      <div className=" gap-3 bg-yellow-100 w-[50%] h-[50%] flex flex-col justify-center items-center">
+      <div className=" gap-3 rounded-md  bg-yellow-100 w-[60%] h-[60%] flex flex-col justify-center items-center">
         <h1 className=" font-mono text-[35px] font-bold">Hello new invester</h1>
         <input
           name="username"
@@ -71,7 +71,7 @@ const Register = () => {
         ) : ( */}
         <button
           onClick={handleSubmit}
-          className="border-[2px]  px-3 py-1 border-black hover:bg-amber-200 font-bold"
+          className=" rounded-md border-[2px]  px-3 py-1 border-black hover:bg-amber-200 font-bold"
         >
           Register
         </button>

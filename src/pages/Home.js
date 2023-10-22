@@ -38,7 +38,7 @@ const Home = () => {
           <div className="flex flex-col items-center font-thin h-[70px] w-[150px]">
             <p className="bg-yellow"> for extra money</p>
             <Link to="/login">
-              <button className=" px-3 py-1 border-white font-bold hover:bg-blue-500">
+              <button className=" rounded-md px-3 py-1 border-white font-bold hover:bg-blue-400">
                 LOGIN
               </button>
             </Link>
@@ -46,7 +46,7 @@ const Home = () => {
           <div className="flex flex-col items-center font-thin h-[70px] w-[150px]">
             <p className="bg-yellow"> for new invesments</p>
             <Link to="/register">
-              <button className="  px-3 py-1 border-white hover:bg-amber-200 font-bold">
+              <button className=" rounded-md  px-3 py-1 border-white hover:bg-amber-200 font-bold">
                 REGISTER
               </button>
             </Link>

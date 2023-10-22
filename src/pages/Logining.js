@@ -30,7 +30,7 @@ const Logining = () => {
 
   return (
     <div className=" h-screen w-screen flex justify-center items-center bg-white">
-      <div className=" gap-3  w-[50%] h-[50%] flex flex-col justify-center items-center bg-blue-300">
+      <div className=" gap-3  w-[50%] h-[50%] flex flex-col justify-center items-center bg-blue-300 rounded-md ">
         <h1 className=" font-mono text-[35px] font-bold"> Welcome Back </h1>
         <input
           name="username"
@@ -48,7 +48,7 @@ const Logining = () => {
         />
         <button
           onClick={() => mutate()}
-          className="border-[2px]  px-3 py-1 border-black font-bold hover:bg-blue-500"
+          className="border-[2px]  px-3 py-1 border-black font-bold hover:bg-blue-400 rounded-md "
         >
           Login
         </button>
