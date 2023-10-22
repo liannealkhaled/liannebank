@@ -30,7 +30,7 @@ const Logining = () => {
 
   return (
     <div className=" h-screen w-screen flex justify-center items-center bg-white">
-      <div className=" gap-3  bg-blue-400  w-[50%] h-[50%] flex flex-col justify-center items-center">
+      <div className=" gap-3  w-[50%] h-[50%] flex flex-col justify-center items-center bg-blue-300">
         <h1 className=" font-mono text-[35px] font-bold"> Welcome Back </h1>
         <input
           name="username"
