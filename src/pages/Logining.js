@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const Logining = () => {
   const [userInfo, setUserInfo] = useState("");
   const { user, setUser } = useContext(UserContext);
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setUserInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -20,7 +20,7 @@ const Logining = () => {
     mutationFn: () => login(userInfo),
     onSuccess: () => {
       setUser(true);
-      navigate("/");
+      navigate("/transactions");
     },
   });
 
@@ -48,7 +48,7 @@ const Logining = () => {
         />
         <button
           onClick={() => mutate()}
-          className="border-[2px] h-1 w-5 border-white hover:bg-slate-500"
+          className="border-[2px] p-[5px] border-white hover:bg-slate-500"
         >
           Login
         </button>

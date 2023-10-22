@@ -16,7 +16,7 @@ const Deposite = () => {
     mutationKey: ["deposite"],
     mutationFn: () => putDeposit(amount),
     onSuccess: () => {
-      queryClient.invalidateQueries(["profile"]);
+      queryClient.invalidateQueries("profile");
     },
   });
 

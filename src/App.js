@@ -20,7 +20,7 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div>
-        {user && <NavBar />}
+        <NavBar />
 
         <Routes>
           <Route path="/" Component={Home} />

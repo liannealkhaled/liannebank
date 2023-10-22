@@ -107,7 +107,7 @@
 
 import React, { useContext } from "react";
 import UserContext from "../context/UserContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getProfile } from "../api/auth";
 
@@ -119,26 +119,46 @@ const NavBar = () => {
     queryKey: ["profile"],
     queryFn: () => getProfile(),
   });
-
+  //   console.log(data);
   return (
     <div className="flex justify-around items-center h-[70px] bg-amber-300">
-      <div className="h-[50px] w-[50px] rounded-full bg-white overflow-hidden">
-        <img
-          src={"https://react-bank-project.eapi.joincoded.com/" + data?.image}
-        />
-      </div>
-      <div> Welcome, {data?.username}</div>
-      <div> balance: {data?.balance}</div>
-      <div
-        onClick={() => {
-          localStorage.removeItem("token");
-          setUser(false);
-          navigate("/login");
-        }}
-        className=" hover:bg-slate-600 px-5 rounded-md cursor-pointer"
-      >
-        logout{" "}
-      </div>
+      {user ? (
+        <>
+          {" "}
+          <div className="h-[50px] w-[50px] rounded-full bg-white overflow-hidden">
+            <img
+              src={
+                "https://react-bank-project.eapi.joincoded.com/" + data?.image
+              }
+            />
+          </div>
+          <div> Welcome, {data?.username}</div>
+          <div> balance: {data?.balance}</div>
+          <div
+            onClick={() => {
+              localStorage.removeItem("token");
+              setUser(false);
+              navigate("/");
+            }}
+            className=" hover:bg-slate-600 px-5 rounded-md cursor-pointer"
+          >
+            logout{" "}
+          </div>{" "}
+        </>
+      ) : (
+        <div>
+          <Link to="/register">
+            <button className="border-[2px] border-white hover:bg-slate-500">
+              Register
+            </button>
+          </Link>
+          <Link to="/login">
+            <button className="border-[2px] border-white hover:bg-slate-500">
+              Login
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

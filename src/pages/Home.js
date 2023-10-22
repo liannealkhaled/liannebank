@@ -1,6 +1,8 @@
 import React from "react";
 
 const Home = () => {
+  // add button <loginig> <register>
+
   return (
     <div className="bg-slate-800 v-screen h-screen flex justify-center flex-row">
       <div className="flex justify-center items-center">
