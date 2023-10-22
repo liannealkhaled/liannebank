@@ -108,16 +108,27 @@
 import React, { useContext } from "react";
 import UserContext from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { getProfile } from "../api/auth";
 
 const NavBar = () => {
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
+  const { data } = useQuery({
+    queryKey: ["profile"],
+    queryFn: () => getProfile(),
+  });
+
   return (
     <div className="flex justify-around items-center h-[70px] bg-amber-300">
-      <div className="h-[50px] w-[50px] rounded-full bg-white"> </div>
-      <div> username: </div>
-      <div> balance: </div>
+      <div className="h-[50px] w-[50px] rounded-full bg-white overflow-hidden">
+        <img
+          src={"https://react-bank-project.eapi.joincoded.com/" + data?.image}
+        />
+      </div>
+      <div> Welcome, {data?.username}</div>
+      <div> balance: {data?.balance}</div>
       <div
         onClick={() => {
           localStorage.removeItem("token");

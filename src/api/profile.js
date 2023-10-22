@@ -1,38 +1,38 @@
 import instance from ".";
 
 const getAllUsers = () => {
-  const { data } = instance.get("/mini-project/api/auth/users");
-  return data;
+  const res = instance.get("/mini-project/api/auth/users");
+  return res.data;
 };
 const getTransactions = () => {
-  const { data } = instance.get("/mini-project/api/transactions/my");
-  return data;
+  const res = instance.get("/mini-project/api/transactions/my");
+  return res.data;
 };
 
 const putDeposit = (amount) => {
-  const { data } = instance.put("/mini-project/api/transactions/deposit", {
+  const res = instance.put("/mini-project/api/transactions/deposit", {
     amount,
   });
-  return data;
+  return res.data;
 };
 
 const putWithdraw = (amount) => {
-  const { data } = instance.put("/mini-project/api/transactions/withdraw", {
+  const res = instance.put("/mini-project/api/transactions/withdraw", {
     amount,
   });
-  return data;
+  return res.data;
 };
 
 const putTransfer = (amount, username) => {
-  const { data } = instance.put(
+  const res = instance.put(
     `/mini-project/api/transactions/transfer/${username}`
   );
-  return data;
+  return res.data;
 };
 
 const getUserInfo = (userID) => {
-  const { data } = instance.get(`/mini-project/api/auth/user/${userID}`);
-  return data;
+  const res = instance.get(`/mini-project/api/auth/user/${userID}`);
+  return res.data;
 };
 
 export {
