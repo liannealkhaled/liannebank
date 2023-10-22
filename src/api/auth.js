@@ -12,11 +12,11 @@ const login = async (userInfo) => {
 
 // register
 const register = async (userInfo) => {
-  const formData = new formData();
+  const formData = new FormData();
   for (let key in userInfo) {
-    formData.append(key, userInfo(key));
+    formData.append(key, userInfo[key]);
   }
-  const res = await instance.post("/mini-project/api/auth/login", formData);
+  const res = await instance.post("/mini-project/api/auth/register", formData);
   storeToken(res.data?.token);
   return res.data;
 };
@@ -42,9 +42,14 @@ const checkToken = () => {
 };
 
 //
-// const getProfile = async () => {
-//   const res = await instance.get("/mini-project/api/auth/me");
+const getProfile = async () => {
+  const res = await instance.get("/mini-project/api/auth/me");
 
-//   return res.data;
-// };
-export { register, login, storeToken, checkToken, getProfile };
+  return res.data;
+};
+
+const logout = () => {
+  localStorage.removeItem("token");
+};
+
+export { register, login, storeToken, checkToken, getProfile, logout };

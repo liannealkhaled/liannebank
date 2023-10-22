@@ -8,8 +8,8 @@ const Home = () => {
           src="https://e1.pxfuel.com/desktop-wallpaper/82/161/desktop-wallpaper-clipart-monopoly-man-monopoly-man-logo.jpg"
           style={{
             borderRadius: 500,
-            height: 300,
-            width: 300,
+            height: 400,
+            width: 400,
           }}
         />
       </div>
@@ -17,8 +17,14 @@ const Home = () => {
         className="flex justify-center
       flex-col ml-10"
       >
-        <h1> Welcome to the bank</h1>
-        <p> where money is real</p>
+        <h1 className="text-[35px] font-mono font-bold">
+          {" "}
+          Welcome to the bank
+        </h1>
+        <p className="text-[20x] font-mono font-bold flex justify-center">
+          {" "}
+          where money is REAL
+        </p>
       </div>
     </div>
   );
