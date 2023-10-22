@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import Register from "./pages/Register";
 import Logining from "./pages/Logining";
 import Home from "./pages/Home";
-
 import { checkToken } from "./api/auth";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -20,14 +19,14 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div>
+        {/* {user ? <NavBar /> : <NavBarr />} */}
         <NavBar />
-
         <Routes>
           <Route path="/" Component={Home} />
-          <Route path="/register" Component={Register} />
-          <Route path="/login" Component={Logining} />
           <Route path="/transactions" Component={Transactions} />
           {/* user ? <route home/> : <route not found/>  */}
+          <Route path="/register" Component={Register} />
+          <Route path="/login" Component={Logining} />
         </Routes>
       </div>
     </UserContext.Provider>

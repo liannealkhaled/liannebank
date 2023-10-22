@@ -4,7 +4,7 @@ import { useState } from "react";
 import { login } from "../api/auth";
 import UserContext from "../context/UserContext";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Logining = () => {
   const [userInfo, setUserInfo] = useState("");
@@ -52,6 +52,11 @@ const Logining = () => {
         >
           Login
         </button>
+        <Link to="/register">
+          <button className="border-[2px] border-white hover:bg-slate-500">
+            Register
+          </button>
+        </Link>
       </div>
     </div>
   );
