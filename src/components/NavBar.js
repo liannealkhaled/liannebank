@@ -132,31 +132,37 @@ const NavBar = () => {
               }
             />
           </div>
-          <div> Welcome, {data?.username}</div>
-          <div> balance: {data?.balance}</div>
+          <div className="font-mono font-semibold">
+            {" "}
+            Welcome, {data?.username}
+          </div>
+          <div className="font-mono font-semibold">
+            {" "}
+            Balance: {data?.balance}
+          </div>
           <div
             onClick={() => {
               localStorage.removeItem("token");
               setUser(false);
               navigate("/");
             }}
-            className=" hover:bg-slate-600 px-5 rounded-md cursor-pointer"
+            className=" hover:bg-slate-600 px-5 rounded-md cursor-pointer font-mono font-semibold "
           >
-            logout{" "}
+            Logout{" "}
           </div>{" "}
         </>
       ) : (
-        <div>
-          <Link to="/register">
-            <button className="border-[2px] border-white hover:bg-slate-500">
-              Register
+        <div className="lex justify-start">
+          <Link to="/">
+            <button className=" border-[2px] border-white hover:bg-slate-500">
+              Home
             </button>
           </Link>
-          <Link to="/login">
+          {/* <Link to="/login">
             <button className="border-[2px] border-white hover:bg-slate-500">
               Login
             </button>
-          </Link>
+          </Link> */}
         </div>
       )}
     </div>

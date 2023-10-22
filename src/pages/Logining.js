@@ -29,9 +29,9 @@ const Logining = () => {
   // }
 
   return (
-    <div className=" h-screen w-screen flex justify-center items-center bg-blue-400 ">
-      <div className=" gap-3 bg-red-500 w-[50%] h-[50%] flex flex-col justify-center items-center">
-        <h1 className="text-[35px]"> Login</h1>
+    <div className=" h-screen w-screen flex justify-center items-center bg-white">
+      <div className=" gap-3  bg-blue-400  w-[50%] h-[50%] flex flex-col justify-center items-center">
+        <h1 className=" font-mono text-[35px] font-bold"> Welcome Back </h1>
         <input
           name="username"
           onChange={handleChange}
@@ -48,15 +48,10 @@ const Logining = () => {
         />
         <button
           onClick={() => mutate()}
-          className="border-[2px] p-[5px] border-white hover:bg-slate-500"
+          className="border-[2px]  px-3 py-1 border-black font-bold hover:bg-blue-500"
         >
           Login
         </button>
-        <Link to="/register">
-          <button className="border-[2px] border-white hover:bg-slate-500">
-            Register
-          </button>
-        </Link>
       </div>
     </div>
   );
