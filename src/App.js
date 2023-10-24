@@ -20,7 +20,7 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <div>
         {/* {user ? <NavBar /> : <NavBarr />} */}
-        <NavBar />
+
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/transactions" Component={Transactions} />

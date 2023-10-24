@@ -25,7 +25,8 @@ const putWithdraw = (amount) => {
 
 const putTransfer = (amount, username) => {
   const res = instance.put(
-    `/mini-project/api/transactions/transfer/${username}`
+    `/mini-project/api/transactions/transfer/${username}`,
+    { amount }
   );
   return res.data;
 };

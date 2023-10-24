@@ -12,13 +12,19 @@ import React from "react";
 import Deposite from "../components/Deposite";
 import Withdraw from "../components/Withdraw";
 import Transfer from "../components/Transfer";
+import NavBar from "../components/NavBar";
+import UsersList from "../components/UsersList";
 
 const Transactions = () => {
   return (
     <div>
-      <Deposite />
-      <Withdraw />
-      <Transfer />
+      <NavBar />
+      <div className="flex flex-row flex-wrap gap-2 mt-10 justify-center">
+        <Deposite />
+        <Withdraw />
+        <Transfer />
+        <UsersList />
+      </div>
     </div>
   );
 };

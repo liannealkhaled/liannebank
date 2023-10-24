@@ -121,52 +121,61 @@ const NavBar = () => {
   });
   //   console.log(data);
   return (
-    <div className="flex justify-around items-center h-[70px] bg-amber-300">
-      {user ? (
+    <div className="flex justify-around items-center h-[70px] bg-black">
+      {/* {user ? (
         <>
+          {" "} */}
+      <div className="h-[50px] w-[50px] rounded-full bg-white overflow-hidden">
+        <img
+          src={"https://react-bank-project.eapi.joincoded.com/" + data?.image}
+        />
+      </div>
+      <div className="font-mono font-semibold flex flex-row text-white">
+        {" "}
+        Welcome,{" "}
+        <div className="font-mono font-semibold text-amber-200">
           {" "}
-          <div className="h-[50px] w-[50px] rounded-full bg-white overflow-hidden">
-            <img
-              src={
-                "https://react-bank-project.eapi.joincoded.com/" + data?.image
-              }
-            />
-          </div>
-          <div className="font-mono font-semibold">
-            {" "}
-            Welcome, {data?.username}
-          </div>
-          <div className="font-mono font-semibold">
-            {" "}
-            Balance: {data?.balance} kd
-          </div>
-          <div
-            onClick={() => {
-              localStorage.removeItem("token");
-              setUser(false);
-              navigate("/");
-            }}
-            className=" hover:bg-slate-400 px-5 rounded-md cursor-pointer font-mono font-semibold "
-          >
-            Logout{" "}
-          </div>{" "}
-        </>
-      ) : (
-        <div className="lex justify-start">
-          <Link to="/">
-            <button className=" border-[2px] border-white hover:bg-slate-500">
-              Home
-            </button>
-          </Link>
-          {/* <Link to="/login">
-            <button className="border-[2px] border-white hover:bg-slate-500">
-              Login
-            </button>
-          </Link> */}
+          {data?.username}
         </div>
-      )}
+      </div>
+      <div className="font-mono font-semibold flex flex-row text-white">
+        {" "}
+        Balance:
+        <div className="font-mono font-semibold text-blue-300">
+          {data?.balance}{" "}
+        </div>{" "}
+        kd
+      </div>
+      <div
+        onClick={() => {
+          localStorage.removeItem("token");
+          setUser(false);
+          navigate("/");
+        }}
+        className="border-[2px]  px-3 py-0 border-white font-bold hover:bg-gray-300 rounded-md text-white"
+      >
+        Logout{" "}
+      </div>{" "}
     </div>
   );
 };
 
 export default NavBar;
+
+{
+  /* //   ) : (
+    //     <div className="lex justify-start">
+    //       <Link to="/">
+    //         <button className=" border-[2px] border-white hover:bg-slate-500">
+    //           Home
+    //         </button>
+    //       </Link> */
+}
+//       {/* <Link to="/login">
+//         <button className="border-[2px] border-white hover:bg-slate-500">
+//           Login
+//         </button>
+//       </Link> */}
+//     </div>
+//   )}
+// </div>
